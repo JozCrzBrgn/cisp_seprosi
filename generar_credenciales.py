@@ -33,8 +33,8 @@ def crear_credenciales(names:list, usernames:list, passwords:list):
     # Eliminar comentarios y espacios en blanco   
     contenido_sin_comentarios_espacios = guardar_sin_comentarios_espacios(contenido)
     # Escribir el contenido en el archivo
-    with open(st.secrets["FILE_PATH_CREDENTIALS"], "w", encoding="utf-8") as archivo:
+    with open(st.secrets["credentials"]["CREDENTIALS_LOCAL_FILE_PATH"], "w", encoding="utf-8") as archivo:
         archivo.write(contenido_sin_comentarios_espacios)
 
 if __name__ == "__main__":
-    crear_credenciales(st.secrets["NAMES"], st.secrets["USERNAMES"], st.secrets["PASSWORDS"])
+    crear_credenciales(st.secrets["credentials"]["NAMES"], st.secrets["credentials"]["USERNAMES"], st.secrets["credentials"]["PASSWORDS"])
